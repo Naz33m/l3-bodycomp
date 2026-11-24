@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.egg-info/
+out/
+cases/
+preds/
+data/
+*.nii
+*.nii.gz
+*.dcm
+eval.csv

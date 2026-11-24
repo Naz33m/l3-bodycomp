@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctbody"
+version = "0.1.0"
+description = "L3 body composition (sarcopenia) from abdominal CT. Research use only."
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "scipy",
+  "nibabel",
+  "matplotlib",
+  "dicom2nifti",
+  "TotalSegmentator>=2.0",
+  "fastapi",
+  "uvicorn[standard]",
+  "python-multipart",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+ctbody = "ctbody.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
